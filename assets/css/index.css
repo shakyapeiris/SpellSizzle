@@ -1,0 +1,84 @@
+#tail {
+	transform-origin: 70% 38%;
+	animation: tail_animation 0.2s ease-in-out infinite alternate-reverse;
+}
+@keyframes tail_animation {
+	0% {
+		transform: rotateZ(-30deg);
+		opacity: 1;
+	}
+	100% {
+		transform: rotateZ(0deg);
+		opacity: 0.7;
+	}
+}
+
+#wing_2 {
+	transform-origin: 65% 45%;
+	animation: wing_2_animation 0.2s ease-in-out infinite alternate-reverse;
+}
+@keyframes wing_2_animation {
+	0% {
+		transform: rotateZ(10deg);
+		opacity: 1;
+	}
+	100% {
+		transform: rotateZ(-20deg);
+		opacity: 0.7;
+	}
+}
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+main section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+main section .text-container {
+	width: 50%;
+}
+main section .text-container h1 {
+	font-size: 6rem;
+	color: #3e1e15;
+	margin-bottom: 20px;
+}
+
+main section .text-container > p {
+	font-weight: lighter;
+	font-size: 1.3rem;
+	color: #3e1e15;
+	margin-bottom: 20px;
+	line-height: 30px;
+}
+
+main section svg {
+	height: auto;
+	width: 50%;
+}
+main section .text-container .btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: max-content;
+}
+main section .text-container .btn-container a.btn {
+	background-color: #ffc313;
+	padding: 10px 20px;
+	color: black;
+	text-align: center;
+	font-size: 1.3rem;
+	border: none;
+	border-radius: 5px;
+	margin-right: 35px;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+}
+main section .text-container .btn-container a {
+	color: #ffc313;
+	text-decoration: underline;
+}
