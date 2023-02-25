@@ -1,0 +1,74 @@
+main {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+main section.head-section {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: max-content;
+}
+main section.head-section .text-container {
+	width: 60%;
+	color: #3e1e15;
+	height: 100%;
+	display: flex;
+	align-items: start;
+	justify-content: space-evenly;
+	flex-direction: column;
+}
+
+main section.head-section .text-container h1 {
+	font-weight: lighter;
+	font-size: 2.5rem;
+}
+
+main section.head-section .text-container p {
+	text-align: justify;
+	font-weight: lighter;
+	color: #6c6c6c;
+	margin-top: 15px;
+	line-height: 22px;
+}
+main section.head-section img {
+	width: auto;
+	height: 250px;
+}
+
+main section.team-section {
+	margin-top: 75px;
+}
+
+main section.team-section h1 {
+	font-size: 2rem;
+	color: #3e1e15;
+}
+main section.team-section .team-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 25px;
+	list-style: none;
+}
+
+main section.team-section .team-container .team-member {
+	width: 18%;
+}
+main section.team-section .team-container .team-member .profile-pic {
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+main section.team-section .team-container .team-member .text-container {
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+}
+main section.team-section .team-container .team-member .text-container p {
+	font-weight: lighter;
+	font-size: 0.9rem;
+}
