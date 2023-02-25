@@ -1,0 +1,115 @@
+main {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+main h1 {
+	color: #3e1e15;
+	margin-bottom: 25px;
+	text-align: center;
+}
+main section .leader-chart {
+	width: 500px;
+	height: 45vh;
+	margin: auto;
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	margin-bottom: 25px;
+}
+
+main section .leader-chart .leader-section {
+	width: calc(100% / 3);
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+main section .leader-chart .leader-section:nth-child(1) .graph {
+	width: 100%;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		135deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(92, 115, 219, 1) 0%,
+		rgba(255, 255, 255, 1) 100%
+	);
+	height: 50%;
+}
+main section .leader-chart .leader-section:nth-child(1) .placeholder {
+	height: calc(50% - 100px);
+}
+main section .leader-chart .leader-section:nth-child(2) .graph {
+	width: 100%;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		135deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(43, 238, 97, 1) 0%,
+		rgba(212, 254, 223, 1) 100%
+	);
+	height: 75%;
+}
+main section .leader-chart .leader-section:nth-child(2) .placeholder {
+	height: calc(25% - 100px);
+}
+main section .leader-chart .leader-section:nth-child(3) .graph {
+	width: 100%;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		135deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(253, 197, 89, 1) 0%,
+		rgba(250, 228, 186, 1) 100%
+	);
+	height: 60%;
+}
+main section .leader-chart .leader-section:nth-child(3) .placeholder {
+	height: calc(40% - 100px);
+}
+
+main section ol {
+	margin-top: 25px;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+main section ol li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 40%;
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+}
+
+main section ol li .number-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: max-content;
+	height: max-content;
+}
+
+main section ol li .profile-pic,
+main section .leader-chart .leader-section .profile .profile-pic {
+	width: 40px;
+	aspect-ratio: 1/1;
+	background-image: url(https://avatars.githubusercontent.com/u/72783701?v=4);
+	background-size: cover;
+	background-position: center;
+	border-radius: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+main section .leader-chart .leader-section .profile .profile-pic {
+	margin: auto;
+	width: 50px;
+}
+main section .leader-chart .leader-section .profile {
+	font-size: 1rem;
+	font-weight: lighter;
+}
