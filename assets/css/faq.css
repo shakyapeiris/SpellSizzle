@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+}
+
+.faq{
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.faq-title{
+    font-size: 3rem;
+}
+
+.faq-questions-answers{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.faq-questions-answers-block{
+    width: 40%;
+    margin-top: 30px;
+}
+
+.faq-questions-answers-block-h1{
+    font-size: 1.5rem;
+    /* color:#6C6C6C; */
+}
+
+.faq-questions-answers-block-p{
+    margin-top: 15px;
+    color:#6C6C6C;
+    font-weight: 400;
+}
+
+@media (max-width:925px) {
+    .faq-questions-answers-block{
+        width: 45%;
+    }
+}
+
+@media (max-width:840px) {
+    .faq-questions-answers{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .faq-questions-answers-block{
+        width: 100%;
+    }
+}
