@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./assets/css/global.css" />
+		<link rel="stylesheet" href="./assets/css/play.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -30,8 +31,87 @@
 				</ul>
 			</nav>
 		</header>
-		<main></main>
-		<footer>
+		<main>
+			<section class="forms">
+				<div class="signup-wrapper">
+					<div class="header">
+						<h1>Sign Up</h1>
+					</div>
+					<form name="signup">
+						<label for="email">Email</label>
+						<input type="email" name="email" placeholder="example@email.com" required />
+						
+						<label for="username">Username</label>
+						<input type="text" name="username" placeholder="Username" required />
+						
+						<label for="password">Password</label>
+						<input type="password" name="password" placeholder="Password" required />
+						
+						<button type="submit">Sign up</button>
+					</form>
+				</div>
+				<div class="login-wrapper">
+					<div class="header">
+						<h1>Login</h1>
+					</div>
+					<form name="login">
+						<label for="username">Username</label>
+						<input type="text" name="username" placeholder="Username" required />
+						
+						<label for="password">Password</label>
+						<input type="password" name="password" placeholder="Password" required />
+						
+						<button type="submit">Login</button>
+					</form>
+				</div>
+			</section>
+			<section class="play">
+				<div class="topbar">
+					<div class="playerinfo">
+						<div class="avatar">
+							<img src="https://avatars.githubusercontent.com/u/72783701?v=4">
+						</div>
+						<div class="user">
+							<h3>Shakya Peiris</h3>
+							<p>Rating: 1000</p>
+						</div>
+					</div>
+					<div class="signout">
+						<svg height="32px" width="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 30.143 30.143" xml:space="preserve">
+							<g>
+								<path style="fill:#ffffff;" d="M20.034,2.357v3.824c3.482,1.798,5.869,5.427,5.869,9.619c0,5.98-4.848,10.83-10.828,10.83
+									c-5.982,0-10.832-4.85-10.832-10.83c0-3.844,2.012-7.215,5.029-9.136V2.689C4.245,4.918,0.731,9.945,0.731,15.801
+									c0,7.921,6.42,14.342,14.34,14.342c7.924,0,14.342-6.421,14.342-14.342C29.412,9.624,25.501,4.379,20.034,2.357z"/>
+								<path style="fill:#ffffff;" d="M14.795,17.652c1.576,0,1.736-0.931,1.736-2.076V2.08c0-1.148-0.16-2.08-1.736-2.08
+									c-1.57,0-1.732,0.932-1.732,2.08v13.496C13.062,16.722,13.225,17.652,14.795,17.652z"/>
+							</g>
+						</svg>
+					</div>
+				</div>
+				<div class="window">
+
+				</div>
+				<div class="bottombar">
+					<div class="actions">
+						<div class="action-btn action-btn-chat">
+
+							<svg fill="#ffffff" height="32px" width="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+							viewBox="0 0 60 60" xml:space="preserve">
+					   <path d="M30,1.5c-16.542,0-30,12.112-30,27c0,5.205,1.647,10.246,4.768,14.604c-0.591,6.537-2.175,11.39-4.475,13.689
+						   c-0.304,0.304-0.38,0.769-0.188,1.153C0.276,58.289,0.625,58.5,1,58.5c0.046,0,0.093-0.003,0.14-0.01
+						   c0.405-0.057,9.813-1.412,16.617-5.338C21.622,54.711,25.738,55.5,30,55.5c16.542,0,30-12.112,30-27S46.542,1.5,30,1.5z"/>
+					   </svg>
+					</div>
+						<div class="action-btn action-btn-learn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path style="fill:#ffffff;" d="M23 5v13.883l-1 .117v-16c-3.895.119-7.505.762-10.002 2.316-2.496-1.554-6.102-2.197-9.998-2.316v16l-1-.117v-13.883h-1v15h9.057c1.479 0 1.641 1 2.941 1 1.304 0 1.461-1 2.942-1h9.06v-15h-1zm-12 13.645c-1.946-.772-4.137-1.269-7-1.484v-12.051c2.352.197 4.996.675 7 1.922v11.613zm9-1.484c-2.863.215-5.054.712-7 1.484v-11.613c2.004-1.247 4.648-1.725 7-1.922v12.051z"/></svg>
+
+					</div>
+					</div>
+				</div>
+			</section>
+			</main>
+			<footer>
 			<ul>
 				<li><a href="./index.html">Home</a></li>
 				<li><a href="./play.html">Play</a></li>
