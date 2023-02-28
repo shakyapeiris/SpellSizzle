@@ -1,0 +1,143 @@
+.forms {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+
+.forms div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.forms div .header {
+    margin: 25px 0;
+    color: #3e1e15;
+    text-align: center;
+    flex: 0;
+}
+
+.forms div form {
+    display: flex;
+    flex-direction: column;
+}
+
+.forms div form input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    font-size: .9rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
+.forms div form button {
+    margin-top: 15px;
+    background-color: #ffc313;
+	padding: 10px 20px;
+	color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+	text-align: center;
+	border: none;
+	border-radius: 8px;
+}
+
+.play {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 25px 0;
+}
+
+.play .topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+.play .topbar .playerinfo {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.play .topbar .playerinfo .avatar {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 1000px;
+}
+
+.play .topbar .playerinfo .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1000px;
+}
+
+.play .topbar .playerinfo .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .2rem;
+}
+
+.play .topbar .playerinfo .user p {
+    color: #777;
+}
+
+.play .topbar .signout {
+    height: 10vh;
+    width: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FD9B9B;
+    border-radius: 1000px;
+}
+
+.play .topbar .signout svg {
+    height: 32px;
+    width: 32px;
+}
+
+.play .window {
+    border-radius: 16px;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    background: #f1f1f1;
+}
+
+.play .bottombar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 10vh;
+}
+
+.play .bottombar .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.play .bottombar .action-btn {
+    height: 10vh;
+    width: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9D8EF5;
+    border-radius: 1000px;
+}
+
+.play .bottombar .actions svg {
+    height: 32px;
+    width: 32px;
+}
