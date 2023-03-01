@@ -28,50 +28,45 @@
       <nav>
         <a href="./index.html"><h1>SpellSizzle</h1></a>
         <ul>
-          <li><a href="./play.html">Play</a></li>
-          <li><a href="./about.html">About</a></li>
+			<li><a href="./play.html">Play</a></li>
+			<li><a href="./about.html">About</a></li>
           <li><a href="./leaderboard.html">Leaderboard</a></li>
           <li><a href="./faq.html">FAQ</a></li>
         </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="play">
-        <div class="topbar">
-          <div class="playerinfo">
-            <div class="avatar">
-              <img src="https://avatars.githubusercontent.com/u/72783701?v=4" />
-            </div>
-            <div class="user">
-              <h3>Shakya Peiris</h3>
-              <p>Rating: 1000</p>
-            </div>
-          </div>
-          <button class="signout">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              viewBox="0 0 30 30"
-            >
-              <path
+	</nav>
+</header>
+<main>
+	<section class="play">
+		<div class="topbar">
+			<div class="playerinfo">
+				<div class="avatar">
+					<img src="https://avatars.githubusercontent.com/u/72783701?v=4" />
+				</div>
+				<div class="user">
+					<h3>Shakya Peiris</h3>
+					<p>Rating: 1000</p>
+				</div>
+			</div>
+			<button class="signout">
+				<svg
+				xmlns="http://www.w3.org/2000/svg"
+				x="0px"
+				y="0px"
+				viewBox="0 0 30 30"
+				>
+				<path
                 d="M 15 3 C 8.3845336 3 3 8.3845336 3 15 C 3 21.615466 8.3845336 27 15 27 C 17.554923 27 19.9167 26.181425 21.853516 24.818359 A 1.0002806 1.0002806 0 0 0 20.703125 23.181641 C 19.081941 24.322575 17.129077 25 15 25 C 9.4654664 25 5 20.534534 5 15 C 5 9.4654664 9.4654664 5 15 5 C 17.129077 5 19.081941 5.6774247 20.703125 6.8183594 A 1.0002809 1.0002809 0 1 0 21.853516 5.1816406 C 19.9167 3.8185753 17.554923 3 15 3 z M 22.990234 9.9902344 A 1.0001 1.0001 0 0 0 22.292969 11.707031 L 24.585938 14 L 14 14 A 1.0001 1.0001 0 1 0 14 16 L 24.585938 16 L 22.292969 18.292969 A 1.0001 1.0001 0 1 0 23.707031 19.707031 L 27.619141 15.794922 A 1.0001 1.0001 0 0 0 27.617188 14.203125 L 23.707031 10.292969 A 1.0001 1.0001 0 0 0 22.990234 9.9902344 z"
-              ></path>
+				></path>
             </svg>
-          </button>
-        </div>
-        <div class="window">
-          <ul>
-            <li><input minlength="1" maxlength="1" /></li>
-            <li><input minlength="1" maxlength="1" /></li>
-            <li><input minlength="1" maxlength="1" /></li>
-            <li><input minlength="1" maxlength="1" /></li>
-            <li><input minlength="1" maxlength="1" /></li>
-          </ul>
-        </div>
-        <div class="bottombar">
-          <div class="actions">
-            <button class="action-btn action-btn-chat" id="spell-btn">
+		</button>
+	</div>
+	<div class="window">
+		<h1 id="loading-text">Loading...</h1>
+		<ul class="input-list"></ul>
+	</div>
+	<div class="bottombar">
+		<div class="actions">
+			<button class="action-btn action-btn-chat" id="spell-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -122,7 +117,7 @@
             </button>
           </div>
           <div class="actions">
-            <button class="action-btn action-btn-skip">
+            <button class="action-btn action-btn-skip" id="skip-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -156,7 +151,7 @@
                 </g>
               </svg>
             </button>
-            <button class="action-btn action-btn-done">
+            <button class="action-btn action-btn-done" id="submit-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -212,24 +207,64 @@
     <script>
       const spellBtn = document.getElementById("spell-btn");
       const meaningBtn = document.getElementById("meaning-btn");
+      const skipBtn = document.getElementById("skip-btn");
+      const submitBtn = document.getElementById("submit-btn");
+      const inputList = document.querySelector(".input-list");
+	  const loadingTxt = document.getElementById('loading-text')
+      let word;
       function speak(text) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.voice = getFemaleVoice();
         speechSynthesis.speak(utterance);
       }
+      skipBtn.addEventListener("click", () => {
+        if (confirm("Are you sure you want to skip this word?"))
+          location.reload();
+      });
+      submitBtn.addEventListener("click", () => {
+        let submittedWord = "";
+        inputList.childNodes.forEach((child) => {
+          if (child && child.firstChild)
+            submittedWord += child.firstChild.value;
+        });
 
-      // Optional - select one of several voices
+        if (submittedWord == word.word) console.log("Success!!"); // Ajax request goes here for success
+        else console.log("Wrong!!"); // Ajax request goes here for worng
+      });
       function getFemaleVoice() {
         const voiceIndex = 1;
         return speechSynthesis.getVoices()[voiceIndex];
       }
-	  console.log(spellBtn)
-      spellBtn.addEventListener('click', () => {
-		speak("Spell");
-	  })
-	  meaningBtn.addEventListener('click', () => {
-		speak("This is the meaning of the word");
-	  })
+      console.log(spellBtn);
+      spellBtn.addEventListener("click", () => {
+        speak(word.word);
+      });
+      meaningBtn.addEventListener("click", () => {
+        speak(word.meaning);
+      });
+
+      window.addEventListener("load", async () => {
+        console.log("Loaded!");
+        const url =
+          "https://raw.githubusercontent.com/matthewreagan/WebstersEnglishDictionary/master/dictionary.json";
+        const response = await fetch(url);
+        const data = await response.json();
+        const arr = [];
+        Object.keys(data).forEach((key) => {
+          arr.push({
+            word: key,
+            meaning: data[key],
+          });
+        });
+        const index = Math.round(Math.random() * (arr.length - 1));
+        word = arr[index];
+        for (let i = 0; i < word.word.length; i++) {
+          inputList.innerHTML += `<li><input minlength="1" maxlength="1" /></li>`;
+        }
+
+		loadingTxt.style.display="none";
+		inputList.style.display = "block";
+      });
     </script>
   </body>
 </html>

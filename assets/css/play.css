@@ -73,12 +73,20 @@
     position: relative;
 }
 
+.play .window #loading-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .play .window ul {
     list-style: none;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 
 .play .window ul li {
