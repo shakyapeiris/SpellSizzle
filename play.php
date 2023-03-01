@@ -215,8 +215,12 @@
                 submittedWord += child.firstChild.value;
         });
 
-        if (submittedWord == word.word) console.log("Success!!"); // Ajax request goes here for success
-        else console.log("Wrong!!"); // Ajax request goes here for worng
+        if (submittedWord == word.word){
+
+            window.location.replace('./success.php')
+        }else{
+            window.location.replace('./wrong.php')
+        }
     });
     function getFemaleVoice() {
         const voiceIndex = 1;
