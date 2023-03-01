@@ -1,6 +1,6 @@
 
 .play {
-    min-height: 90vh;
+    
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -67,46 +67,42 @@
 .play .window {
     border-radius: 16px;
     display: flex;
-    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 70vh;
     width: 100%;
     background: #f1f1f1;
-    position: relative;
 }
 
-.play .window #loading-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.play .window .tick {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.play .window ul {
-    list-style: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+.play .window .tick svg {
+    fill: #01A768;
+    width: 60%;
+    height: 60%;
 }
 
-.play .window ul li {
-    display: inline-flex;
-    margin-right: 10px;
-}
-
-.play .window ul li:last-child {
-    margin-right: 0;
-}
-
-.play .window ul li input {
-    outline: none;
-    border: none;
-    border-bottom: 3px solid orange;
-    width: 30px;
-    color: orange;
-    Background: none;
+.play .window .message {
     text-align: center;
+    color: #01A768;
+}
+
+.play .window .message h1 {
     font-size: 2rem;
+}
+
+.play .window .message p {
+    font-size: 1.3rem;
+    font-weight: lighter;
 }
 
 .play .bottombar {
