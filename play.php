@@ -48,7 +48,7 @@
                     <p><?php  echo $_SESSION['rate']?></p>
                 </div>
             </div>
-            <button class="signout">
+            <a href="./logout.php" class="signout">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -59,7 +59,7 @@
                         d="M 15 3 C 8.3845336 3 3 8.3845336 3 15 C 3 21.615466 8.3845336 27 15 27 C 17.554923 27 19.9167 26.181425 21.853516 24.818359 A 1.0002806 1.0002806 0 0 0 20.703125 23.181641 C 19.081941 24.322575 17.129077 25 15 25 C 9.4654664 25 5 20.534534 5 15 C 5 9.4654664 9.4654664 5 15 5 C 17.129077 5 19.081941 5.6774247 20.703125 6.8183594 A 1.0002809 1.0002809 0 1 0 21.853516 5.1816406 C 19.9167 3.8185753 17.554923 3 15 3 z M 22.990234 9.9902344 A 1.0001 1.0001 0 0 0 22.292969 11.707031 L 24.585938 14 L 14 14 A 1.0001 1.0001 0 1 0 14 16 L 24.585938 16 L 22.292969 18.292969 A 1.0001 1.0001 0 1 0 23.707031 19.707031 L 27.619141 15.794922 A 1.0001 1.0001 0 0 0 27.617188 14.203125 L 23.707031 10.292969 A 1.0001 1.0001 0 0 0 22.990234 9.9902344 z"
                     ></path>
                 </svg>
-            </button>
+            </a>
         </div>
         <div class="window">
             <h1 id="loading-text">Loading...</h1>
@@ -223,7 +223,7 @@
                 body:formData
             }).then(response=>response.json()).then(data=>{
                 if (!data?.error){
-                    alert(data?.message)
+                  window.location.replace('./success.php')
                 }else{
                     alert('Something went wrong')
                 }
@@ -234,7 +234,7 @@
             body:formData
         }).then(response=>response.json()).then(data=>{
             if (!data?.error){
-                alert(data?.message)
+                window.location.replace('./wrong.php')
             }else{
                 alert('Something went wrong')
             }
