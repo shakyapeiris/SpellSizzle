@@ -209,6 +209,8 @@
             location.reload();
     });
     submitBtn.addEventListener("click", () => {
+        const formData = new FormData();
+        formData.append('uid',<?php echo $_SESSION['id'];?>)
         let submittedWord = "";
         inputList.childNodes.forEach((child) => {
             if (child && child.firstChild)
@@ -216,10 +218,27 @@
         });
 
         if (submittedWord == word.word){
-
-            window.location.replace('./success.php')
+            fetch('./controller/incremint.php',{
+                method:"post",
+                body:formData
+            }).then(response=>response.json()).then(data=>{
+                if (!data?.error){
+                    alert(data?.message)
+                }else{
+                    alert('Something went wrong')
+                }
+            })
         }else{
-            window.location.replace('./wrong.php')
+        fetch('./controller/decriment.php',{
+            method:"post",
+            body:formData
+        }).then(response=>response.json()).then(data=>{
+            if (!data?.error){
+                alert(data?.message)
+            }else{
+                alert('Something went wrong')
+            }
+        })
         }
     });
     function getFemaleVoice() {
