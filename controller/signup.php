@@ -19,6 +19,7 @@ $profilePics = [
 ];
 $profilePic =$profilePics[array_rand($profilePics)];
 $email = mysqli_real_escape_string($connection, $_POST['email']);
+$userName = mysqli_real_escape_string($connection, $_POST['userName']);
 $password = mysqli_real_escape_string($connection, $_POST['password']);
 $enpassword = md5(sha1($password));
 
@@ -32,6 +33,11 @@ if (empty($password)):
     echo json_encode(["error"=>true,"message" => "Password is required"]);
     return;
 endif;
+if (empty($userName)):
+    echo json_encode(["error"=>true,"message" => "User name is required"]);
+    return;
+
+endif;
 
 if (strlen($password) < 8):
     echo json_encode(["error"=>true,"message" => "Password must be 8 characters"]);
@@ -44,13 +50,26 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)):
     return;
 endif;
 
-$query = "SELECT * FROM users WHERE email = '{$email}'";
-$run = mysqli_query($connection, $query);
-if (mysqli_num_rows($run) == 1):
+$userNameFindQuery = "SELECT * FROM users WHERE username = '{$userName}'";
+$userNameFindQueryRun = mysqli_query($connection, $userNameFindQuery);
+if (mysqli_num_rows($userNameFindQueryRun) == 1):
+    echo json_encode(["error"=>true,"message" => "User name All ready exists"]);
+    return;
+
+endif;
+
+
+
+
+
+
+$emailFindQuery = "SELECT * FROM users WHERE email = '{$email}'";
+$emailFindQueryRun = mysqli_query($connection, $emailFindQuery);
+if (mysqli_num_rows($emailFindQueryRun) == 1):
     echo json_encode(["error"=>true,"message" => "Email All ready exists"]);
     return;
 else:
-    $query = "INSERT INTO users(email,password,image) VALUES ('{$email}','{$enpassword}','{$profilePic}')";
+    $query = "INSERT INTO users(email,password,username,image) VALUES ('{$email}','{$enpassword}','{$userName}','{$profilePic}')";
     $run = mysqli_query($connection, $query);
     if ($run):
         echo json_encode(["error"=>false,"message" => "Account Created Success"]);
