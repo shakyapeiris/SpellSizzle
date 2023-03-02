@@ -8,10 +8,8 @@ $topPlayers = [];
 
 $topPlayerQuery = "SELECT * FROM users  ORDER BY rate DESC LIMIT 10";
 $topPlayerQueryRun = mysqli_query($connection, $topPlayerQuery);
-while ($data = mysqli_fetch_assoc($topPlayerQueryRun)){
-    array_push($topPlayers,$data);
+while ($data = mysqli_fetch_assoc($topPlayerQueryRun)) {
+    array_push($topPlayers, $data);
 }
 
-echo json_encode(["layers"=>$topPlayers]);
-
-
+echo json_encode(["players" => $topPlayers]);

@@ -1,52 +1,63 @@
 .forms div {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding-top: 20px;
 }
 
 .forms .form-wrapper {
-    width: 50%;
-    margin: auto;
+	width: 50%;
+	margin: auto;
 }
 
 .forms div .header {
-    margin: 25px 0;
-    color: #3e1e15;
-    text-align: center;
-    flex: 0;
+	margin: 25px 0;
+	color: #3e1e15;
+	text-align: center;
+	flex: 0;
 }
 
 .forms div form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .forms div form input {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    padding: 10px 20px;
-    font-size: .9rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #f1f1f1;
-    outline: none;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	padding: 10px 20px;
+	font-size: 0.9rem;
+	border: none;
+	border-radius: 8px;
+	background-color: #f1f1f1;
+	outline: none;
 }
 
 .forms div form button {
-    margin-top: 15px;
-    background-color: #ffc313;
+	margin-top: 15px;
+	background-color: #ffc313;
 	padding: 10px 20px;
 	color: black;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
 	text-align: center;
 	border: none;
 	border-radius: 8px;
-    transition: 0.5s all ease;
+	transition: 0.5s all ease;
 }
 
 .forms div form button:hover {
-    background-color: #a97f00;
+	background-color: #a97f00;
+}
+
+.register-link {
+	font-weight: lighter;
+	font-size: 1rem;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.register-link a {
+	text-decoration: underline;
 }

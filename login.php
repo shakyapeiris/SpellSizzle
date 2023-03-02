@@ -53,8 +53,8 @@ if (!empty($_SESSION['id'])){
                         placeholder="Password"
                         required
                 />
-
                 <button type="submit" id="signInBtn">Login</button>
+                <p class="register-link">Not registered yet? <a href="./sign-up.php">SignUp</a></p>
             </form>
         </div>
     </section>

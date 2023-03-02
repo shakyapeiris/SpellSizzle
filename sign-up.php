@@ -65,6 +65,7 @@ if (!empty($_SESSION['id'])){
                 />
 
                 <button type="submit" id="signUpBtn">Sign up</button>
+                 <p class="register-link">Already have an account? <a href="./login.php">SignIn</a></p>
             </form>
         </div>
     </section>
