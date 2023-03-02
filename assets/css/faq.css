@@ -60,4 +60,10 @@ body {
 	.faq-questions-answers-block {
 		width: 100%;
 	}
+	.faq {
+		margin-top: 20px;
+	}
+	.faq-questions-answers {
+		margin-top: 0px;
+	}
 }
