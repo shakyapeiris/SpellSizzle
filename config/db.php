@@ -15,7 +15,7 @@ class db
     $this->username="root";
     $this->password="";
     $this->dbname="spellsizzle";
-
+//    MYSQL DATABASE CONNECTIO
         $this->conn = new mysqli($this->host,$this->username,$this->password,$this->dbname);
         if ($this->conn->connect_error){
             die("Connection failed: " . $this->conn->connect_error);
