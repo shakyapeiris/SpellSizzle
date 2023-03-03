@@ -29,6 +29,7 @@
     <script>
         window.addEventListener('load', () => {
             fetch('./controller/leaderBoard.php').then(response => response.json()).then(data => {
+                console.log(data.players)
                 const nextSeven = data.players.slice(3, data.players.length);
                 const topThree = [data.players[2], data.players[0], data.players[1]];
                 const leaderList = document.querySelector('.leader-list');

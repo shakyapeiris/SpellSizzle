@@ -132,13 +132,32 @@ main section .text-container .btn-container a {
 
 	main section .text-container {
 		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		text-align: center;
 	}
 
 	main section .text-container h1 {
 		font-size: 3rem;
+		text-align: center;
+		width: 100%;
 	}
 
 	main section .text-container > p {
 		font-size: 1.1rem;
+		text-align: center;
+		width: 100%;
+	}
+	main section .text-container .btn-container a {
+		padding: 10px 20px;
+	}
+	main section .text-container .btn-container a.btn {
+		margin-right: 0px;
+	}
+
+	main section .text-container .btn-container {
+		width: 60%;
 	}
 }

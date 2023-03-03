@@ -91,6 +91,7 @@ main section.team-section .team-container .team-member .text-container p {
 		top: 50%;
 		height: 80%;
 		width: auto;
+		max-width: 100%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		opacity: 0.5;
@@ -114,5 +115,9 @@ main section.team-section .team-container .team-member .text-container p {
 	}
 	main section.team-section .team-container .team-member {
 		width: 80%;
+	}
+	main section.head-section img {
+		width: 100%;
+		height: auto;
 	}
 }
