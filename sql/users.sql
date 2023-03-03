@@ -33,7 +33,7 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `rate` int(11) NOT NULL DEFAULT 1000,
-  `image` text DEFAULT 'https://st3.depositphotos.com/6672868/14655/v/450/depositphotos_146556543-stock-illustration-user-profile-symbol.jpg'
+  `image` varchar(255) DEFAULT 'https://st3.depositphotos.com/6672868/14655/v/450/depositphotos_146556543-stock-illustration-user-profile-symbol.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
