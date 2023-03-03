@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!empty($_SESSION['id'])){
+if (!empty($_SESSION['id'])) {
     header('Location:./play.php');
 }
 
@@ -8,6 +8,7 @@ if (!empty($_SESSION['id'])){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,82 +17,72 @@ if (!empty($_SESSION['id'])){
     <link rel="stylesheet" href="./assets/css/signup.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-    />
-    <link
-            rel="shortcut icon"
-            href="./assets/images/logo.png"
-            type="image/png"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/png" />
     <title>SpellSizzle | Play</title>
+
+
 </head>
+
 <body>
-<?php require_once('./componets/navbar.php') ?>
-<main>
-    <section class="forms">
-        <div class="form-wrapper">
-            <div class="header">
-                <h1>Login</h1>
-            </div>
-            <form name="login">
-                <label for="username">Username</label>
-                <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        value=""
-                        required
-                />
-
-                <label for="password">Password</label>
-                <input
-                        type="password"
-                        name="password"
-                        value=""
-                        placeholder="Password"
-                        required
-                />
-
+    <?php require_once('./componets/navbar.php') ?>
+    <main>
+        <section class="forms">
+            <!--Login Form-->
+            <form name="login" class="form-wrapper" style="height: 45vh;">
+                <div class="header">
+                    <h1>Login</h1>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username" value="" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" value="" placeholder="Password" required />
+                </div>
                 <button type="submit" id="signInBtn">Login</button>
+                <p class="register-link">Not registered yet? <a href="./sign-up.php">SignUp</a></p>
             </form>
-        </div>
-    </section>
-</main>
-<?php require_once('./componets/footer.php') ?>
+        </section>
+    </main>
+    <?php require_once('./componets/footer.php') ?>
 
-<script>
+    <script>
+        const signInBtn = document.querySelector('#signInBtn');
 
-    const signInBtn = document.querySelector('#signInBtn');
-    signInBtn.addEventListener('click',(e)=>{
-        e.preventDefault();
+        // Listen to button click and send POST request to
+        // the respective endpoint
+        signInBtn.addEventListener('click', (e) => {
+            e.preventDefault();
 
-        const userName = document.getElementsByName('username')[0];
-        const password = document.getElementsByName('password')[0];
-        const formData = new FormData();
+            const userName = document.getElementsByName('username')[0];
+            const password = document.getElementsByName('password')[0];
+            const formData = new FormData();
 
-        formData.append('userName',userName.value);
-        formData.append('password',password.value);
+            formData.append('userName', userName.value);
+            formData.append('password', password.value);
 
-        fetch('./controller/login.php',{
-            method:"post",
-            body:formData
-        }).then(response=>response.json()).then(data=>{
-            alert(data?.message)
-            if (data?.error){
-                return;
-            }else{
-                window.location.replace('./play.php')
-            }
+            // Send HTTP to the resepective endpoint
+            fetch('./controller/login.php', {
+                method: "post",
+                body: formData
+            }).then(response => response.json()).then(data => {
+                // validate usersname and password
+                alert(data?.message)
+                if (data?.error) {
+                    return;
+                } else {
+                    // redirect to play page if the credentials are correct
+                    window.location.replace('./play.php')
+                }
+            })
+
+
         })
-
-
-    })
-
-
-</script>
+    </script>
 
 
 </body>
+
 </html>

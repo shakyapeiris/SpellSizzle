@@ -1,52 +1,93 @@
-.forms div {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-top: 20px;
+.forms {
+	width: 100%;
+	min-height: 90vh;
+	position: relative;
+}
+.forms .form-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.forms .form-group label {
+	width: 100%;
+	text-align: left;
 }
 
 .forms .form-wrapper {
-    width: 50%;
-    margin: auto;
+	width: 40%;
+	height: 50vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
-.forms div .header {
-    margin: 25px 0;
-    color: #3e1e15;
-    text-align: center;
-    flex: 0;
+.forms .header {
+	color: #3e1e15;
+	text-align: center;
+	flex: 0;
 }
 
-.forms div form {
-    display: flex;
-    flex-direction: column;
+.forms .form-group input {
+	padding: 10px 20px;
+	font-size: 0.9rem;
+	border: none;
+	border-radius: 8px;
+	background-color: #f1f1f1;
+	outline: none;
+	font-weight: lighter;
+	width: 100%;
 }
 
-.forms div form input {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    padding: 10px 20px;
-    font-size: .9rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #f1f1f1;
-    outline: none;
-}
-
-.forms div form button {
-    margin-top: 15px;
-    background-color: #ffc313;
+.forms button {
+	background-color: #ffc313;
 	padding: 10px 20px;
 	color: black;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+	font-size: 1rem;
+	font-weight: 500;
+	width: 100%;
+	cursor: pointer;
 	text-align: center;
 	border: none;
 	border-radius: 8px;
-    transition: 0.5s all ease;
+	transition: 0.5s all ease;
 }
 
 .forms div form button:hover {
-    background-color: #a97f00;
+	background-color: #a97f00;
+}
+
+.register-link {
+	font-weight: lighter;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.register-link a {
+	text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+	.forms .form-wrapper {
+		width: 50%;
+	}
+}
+
+@media (max-width: 425px) {
+	.forms .form-wrapper {
+		width: 100%;
+	}
+	.forms .form-group label,
+	.forms .form-group input,
+	.register-link,
+	.forms button {
+		font-size: 0.8rem;
+	}
 }

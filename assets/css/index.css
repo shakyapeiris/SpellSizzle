@@ -82,3 +82,82 @@ main section .text-container .btn-container a {
 	color: #ffc313;
 	text-decoration: underline;
 }
+
+@media (max-width: 1024px) {
+	main section .text-container h1 {
+		font-size: 4rem;
+	}
+	main section svg {
+		height: auto;
+		width: 40%;
+	}
+	main section .text-container > p {
+		font-size: 1.1rem;
+	}
+	main section .text-container .btn-container a.btn {
+		font-size: 1.1rem;
+	}
+}
+
+@media (max-width: 675px) {
+	main section .text-container h1 {
+		font-size: 3rem;
+	}
+
+	main section .text-container > p {
+		font-size: 1.1rem;
+	}
+}
+
+@media (max-width: 425px) {
+	main section {
+		position: relative;
+		display: flex;
+		align-items: start;
+		justify-content: center;
+		flex-direction: column;
+		min-height: 90vh;
+	}
+	main section svg {
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: -10;
+		opacity: 0.7;
+		height: 50vh;
+		width: auto;
+	}
+
+	main section .text-container {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	main section .text-container h1 {
+		font-size: 3rem;
+		text-align: center;
+		width: 100%;
+	}
+
+	main section .text-container > p {
+		font-size: 1.1rem;
+		text-align: center;
+		width: 100%;
+	}
+	main section .text-container .btn-container a {
+		padding: 10px 20px;
+	}
+	main section .text-container .btn-container a.btn {
+		margin-right: 0px;
+	}
+
+	main section .text-container .btn-container {
+		width: 60%;
+	}
+}

@@ -25,6 +25,7 @@ main section .leader-chart .leader-section {
 	justify-content: space-between;
 	flex-direction: column;
 }
+
 main section .leader-chart .leader-section:nth-child(1) .graph {
 	width: 100%;
 	background: rgb(2, 0, 36);
@@ -112,4 +113,20 @@ main section .leader-chart .leader-section .profile .profile-pic {
 main section .leader-chart .leader-section .profile {
 	font-size: 1rem;
 	font-weight: lighter;
+	width: 100%;
+	text-align: center;
+	overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+	main section .leader-chart {
+		width: 100%;
+	}
+}
+
+@media (max-width: 425px) {
+	main section ol li {
+		width: 100%;
+		font-size: 0.9rem;
+	}
 }

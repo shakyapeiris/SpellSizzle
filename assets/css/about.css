@@ -50,6 +50,7 @@ main section.team-section .team-container {
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 25px;
+	flex-wrap: wrap;
 	list-style: none;
 }
 
@@ -71,4 +72,52 @@ main section.team-section .team-container .team-member .text-container {
 main section.team-section .team-container .team-member .text-container p {
 	font-weight: lighter;
 	font-size: 0.9rem;
+}
+
+@media (max-width: 985px) {
+	main section.head-section {
+		position: relative;
+		display: block;
+		overflow-x: hidden;
+	}
+	main section.head-section .text-container {
+		width: 100%;
+	}
+	main section.head-section .text-container br {
+		display: none;
+	}
+	main section.head-section img {
+		position: absolute;
+		top: 50%;
+		height: 80%;
+		width: auto;
+		max-width: 100%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0.5;
+		z-index: -10;
+	}
+}
+
+@media (max-width: 500px) {
+	main section.team-section {
+		margin-top: 25px;
+	}
+	main section.team-section .team-container .team-member {
+		width: 45%;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 320px) {
+	main section.team-section .team-container {
+		flex-direction: column;
+	}
+	main section.team-section .team-container .team-member {
+		width: 80%;
+	}
+	main section.head-section img {
+		width: 100%;
+		height: auto;
+	}
 }
