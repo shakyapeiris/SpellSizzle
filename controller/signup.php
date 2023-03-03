@@ -6,6 +6,8 @@ require_once '../config/db.php';
 $db = new db();
 $connection = $db->conn;
 global $connection;
+
+// PREDEFINED PROFILE PICTURES ARRAY
 $profilePics = [
     "https://hips.hearstapps.com/rbk.h-cdn.co/assets/17/35/1504106954-monkey.jpg",
     "https://cdn.britannica.com/22/206222-050-3F741817/Domestic-feline-tabby-cat.jpg",
@@ -17,12 +19,18 @@ $profilePics = [
     "https://images.theconversation.com/files/438138/original/file-20211216-25-1hu3e65.jpg?ixlib=rb-1.1.0&rect=42%2C0%2C4715%2C3126&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7eNk99sdClCr6PgSJ4lory52uLyonJBW_yQ&usqp=CAU",
 ];
+
+// GET RANDOM ELEMENTS IN ARRAY
 $profilePic =$profilePics[array_rand($profilePics)];
+
+// PREVENTING SQL INJECTION ATTACK
 $email = mysqli_real_escape_string($connection, $_POST['email']);
 $userName = mysqli_real_escape_string($connection, $_POST['userName']);
 $password = mysqli_real_escape_string($connection, $_POST['password']);
+// PASSWORD HASHING
 $enpassword = md5(sha1($password));
 
+// FIELD VALIDATION
 if (empty($email)):
     echo json_encode(["error"=>true,"message" => "Email is required"]);
     return;
@@ -50,6 +58,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)):
     return;
 endif;
 
+//  CHECK IF USER NAME EXISTS
 $userNameFindQuery = "SELECT * FROM users WHERE username = '{$userName}'";
 $userNameFindQueryRun = mysqli_query($connection, $userNameFindQuery);
 if (mysqli_num_rows($userNameFindQueryRun) == 1):
@@ -58,17 +67,14 @@ if (mysqli_num_rows($userNameFindQueryRun) == 1):
 
 endif;
 
-
-
-
-
-
+//  CHECK IF THE MAIL EXISTS
 $emailFindQuery = "SELECT * FROM users WHERE email = '{$email}'";
 $emailFindQueryRun = mysqli_query($connection, $emailFindQuery);
 if (mysqli_num_rows($emailFindQueryRun) == 1):
     echo json_encode(["error"=>true,"message" => "Email All ready exists"]);
     return;
 else:
+//     ACCOUNT CREATION
     $query = "INSERT INTO users(email,password,username,image) VALUES ('{$email}','{$enpassword}','{$userName}','{$profilePic}')";
     $run = mysqli_query($connection, $query);
     if ($run):

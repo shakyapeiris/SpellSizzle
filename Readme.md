@@ -35,7 +35,7 @@ Since this project fetches data from [matthewreagan/WebstersEnglishDictionary](h
 <summary>For windows devices</summary>
 <ol>
     <li>First install the <a href="https://www.apachefriends.org/" target="_blank">XAMPP</a> server in your machine</li>
-    <li></li>
+    <li>Then head overto PHPMyAdmin in the localhost and create a Database named as 'spellsizzle'. Next import the <a href="./sql/users.sql">SpellSizzle/sql/users.sql</a> file in to the database</li>
     <li></li>
     <li></li>
 </ol>
