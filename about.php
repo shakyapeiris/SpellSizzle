@@ -51,16 +51,32 @@
     // Render the list of team mebers
     const teamMemberList = document.querySelector('.team-container');
     const teamMembers = [{
+        name: 'Pasindu Dushan',
+        designation: 'Team Leader',
+        image: 'https://www.nicepng.com/png/detail/266-2666972_software-developer.png',
+    }, {
         name: 'Shakya Peiris',
-        designation: 'Front-End Developer',
-        image: 'https://avatars.githubusercontent.com/u/72783701?v=4',
+        designation: 'Front-end Developer',
+        image: 'https://www.pngitem.com/pimgs/m/182-1822816_developer-clipart-hd-png-download.png',
+    }, {
+        name: 'Nuwantha Pasindhu',
+        designation: 'Back-end Developer',
+        image: 'https://cdn-icons-png.flaticon.com/512/6840/6840478.png',
+    }, {
+        name: 'Nisandu Athsara',
+        designation: 'Front-end Developer',
+        image: 'https://cdn-icons-png.flaticon.com/512/6478/6478099.png',
+    }, {
+        name: 'Minuka Gunasekara',
+        designation: 'Front-end Developer',
+        image: 'https://cdn-icons-png.flaticon.com/512/5072/5072860.png',
     }, ];
     for (let i = 0; i < 5; i++) {
         teamMemberList.innerHTML += `<li class='team-member'>
 					<div class='profile-pic' style="background-image: url(${teamMembers[0].image});"></div>
 					<div class='text-container'>
-						<h3>${teamMembers[0].name}</h3>
-						<p>${teamMembers[0].designation}</p>
+						<h3>${teamMembers[i].name}</h3>
+						<p>${teamMembers[i].designation}</p>
 					</div>
 				</li>`;
     }
