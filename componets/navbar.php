@@ -3,6 +3,7 @@
         <a href="./">
             <h1>SpellSizzle</h1>
         </a>
+        <!--Dekstop and Tablet navbar-->
         <ul>
             <li><a href="./play.php">Play</a></li>
             <li><a href="./about.php">About</a></li>
@@ -16,6 +17,8 @@
         </div>
 
     </nav>
+
+    <!--Mobile navbar-->
     <div class="responsive-navbar">
         <nav>
             <a href="./">
@@ -39,6 +42,7 @@
         const hamburgerCloseBtn = document.querySelector('.hamburger-close');
         const respNavBar = document.querySelector('.responsive-navbar')
 
+        // Toggle visibility of mobile navbar on button clicks
         hamburgerBtn.addEventListener('click', () => {
             respNavBar.classList.add('responsive-navbar-animate')
         })

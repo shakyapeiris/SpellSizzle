@@ -28,6 +28,7 @@ if (!empty($_SESSION['id'])) {
     <?php require_once('./componets/navbar.php') ?>
     <main>
         <section class="forms">
+            <!--Login Form-->
             <form name="login" class="form-wrapper" style="height: 45vh;">
                 <div class="header">
                     <h1>Login</h1>
@@ -49,6 +50,9 @@ if (!empty($_SESSION['id'])) {
 
     <script>
         const signInBtn = document.querySelector('#signInBtn');
+
+        // Listen to button click and send POST request to
+        // the respective endpoint
         signInBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
@@ -59,14 +63,17 @@ if (!empty($_SESSION['id'])) {
             formData.append('userName', userName.value);
             formData.append('password', password.value);
 
+            // Send HTTP to the resepective endpoint
             fetch('./controller/login.php', {
                 method: "post",
                 body: formData
             }).then(response => response.json()).then(data => {
+                // validate usersname and password
                 alert(data?.message)
                 if (data?.error) {
                     return;
                 } else {
+                    // redirect to play page if the credentials are correct
                     window.location.replace('./play.php')
                 }
             })

@@ -27,14 +27,17 @@
     </main>
     <?php require_once('./componets/footer.php') ?>
     <script>
+        // Fetch top 10 users depending on the rating
         window.addEventListener('load', () => {
             fetch('./controller/leaderBoard.php').then(response => response.json()).then(data => {
-                console.log(data.players)
+
+                // Seperate top 3 and next 7
                 const nextSeven = data.players.slice(3, data.players.length);
                 const topThree = [data.players[2], data.players[0], data.players[1]];
                 const leaderList = document.querySelector('.leader-list');
                 const leaderChart = document.querySelector('.leader-chart');
 
+                // Render lists and update DOM
                 nextSeven.forEach((player, i) => {
                     leaderList.innerHTML += `<li>
                         <div class="number-wrapper">

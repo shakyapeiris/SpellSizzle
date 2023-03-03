@@ -27,7 +27,7 @@ if (!empty($_SESSION['id'])) {
     <?php require_once('./componets/navbar.php') ?>
     <main>
         <section class="forms">
-
+            <!--Signup form-->
             <form class="form-wrapper">
                 <div class="header">
                     <h1>Sign Up</h1>
@@ -55,6 +55,9 @@ if (!empty($_SESSION['id'])) {
     <?php require_once('./componets/footer.php') ?>
     <script>
         const signUpBtn = document.querySelector('#signUpBtn');
+
+        // Listen to button click and send an 
+        // HTTP request to the respective endpoint
         signUpBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
@@ -67,6 +70,7 @@ if (!empty($_SESSION['id'])) {
             formData.append('userName', userName.value);
             formData.append('password', password.value);
 
+            // Send an HTTP request to the respective endpoint
             fetch('./controller/signup.php', {
                 method: "post",
                 body: formData

@@ -30,6 +30,7 @@
     <?php require_once('./componets/navbar.php') ?>
     <main>
         <section class="play">
+            <!--Profile Bar-->
             <div class="topbar">
                 <div class="playerinfo">
                     <div class="avatar">
@@ -46,12 +47,16 @@
                     </svg>
                 </a>
             </div>
+            <!--Input area-->
             <div class="window">
                 <h1 id="loading-text">Loading...</h1>
                 <ul class="input-list"></ul>
             </div>
+
+            <!--Button bar-->
             <div class="bottombar">
                 <div class="actions">
+                    <!--pronounce button-->
                     <button class="action-btn action-btn-chat" id="spell-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256" style="fill: #000000">
                             <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -61,6 +66,8 @@
                             </g>
                         </svg>
                     </button>
+
+                    <!--Dictionary button-->
                     <button class="action-btn action-btn-learn" id="meaning-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style="fill: white">
                             <path d="M 12 2 C 8.699219 2 6 4.699219 6 8 L 6 42.417969 C 6 45.59375 8.832031 48 12 48 L 44 48 L 44 46 L 12 46 C 9.839844 46 8 44.378906 8 42.417969 C 8 40.457031 9.800781 39 12 39 L 44 39 L 44 2 Z M 12 4 L 42 4 L 42 37 L 12 37 C 10.507813 37 9.09375 37.539063 8 38.417969 L 8 8 C 8 5.78125 9.78125 4 12 4 Z M 19.285156 13 L 14 28.421875 L 14 29 L 16 29 L 16 28.75 L 16.941406 26 L 24.058594 26 L 25 28.75 L 25 29 L 27 29 L 27 28.421875 L 21.714844 13 Z M 20.5 15.625 L 23.371094 24 L 17.628906 24 Z M 32 17 C 31.097656 17 30.277344 17.324219 29.746094 17.90625 C 29.210938 18.492188 29 19.253906 29 20 L 31 20 C 31 19.628906 31.101563 19.390625 31.222656 19.253906 C 31.347656 19.117188 31.527344 19 32 19 C 32.414063 19 32.542969 19.097656 32.703125 19.320313 C 32.867188 19.542969 33 19.964844 33 20.5 L 33 21.1875 C 32.683594 21.074219 32.351563 21 32 21 L 31 21 C 29.355469 21 28 22.355469 28 24 L 28 26 C 28 27.644531 29.355469 29 31 29 L 32 29 C 32.769531 29 33.464844 28.695313 34 28.214844 C 34.535156 28.695313 35.230469 29 36 29 L 36 27 C 35.433594 27 35 26.566406 35 26 L 35 20.5 C 35 19.660156 34.820313 18.832031 34.328125 18.148438 C 33.832031 17.464844 32.960938 17 32 17 Z M 31 23 L 32 23 C 32.554688 23 33 23.445313 33 24 L 33 26 C 33 26.554688 32.554688 27 32 27 L 31 27 C 30.445313 27 30 26.554688 30 26 L 30 24 C 30 23.445313 30.445313 23 31 23 Z"></path>
@@ -68,6 +75,7 @@
                     </button>
                 </div>
                 <div class="actions">
+                    <!--Skip button-->
                     <button class="action-btn action-btn-skip" id="skip-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256" style="fill: #000000">
                             <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -77,6 +85,8 @@
                             </g>
                         </svg>
                     </button>
+
+                    <!--Submit button-->
                     <button class="action-btn action-btn-done" id="submit-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256" style="fill: #000000">
                             <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -92,19 +102,29 @@
     </main>
     <?php require_once('./componets/footer.php') ?>
     <script>
+        // Pronounce Button
         const spellBtn = document.getElementById("spell-btn");
+        // Dictionary Button
         const meaningBtn = document.getElementById("meaning-btn");
+        // Skip button
         const skipBtn = document.getElementById("skip-btn");
+        // Submit button
         const submitBtn = document.getElementById("submit-btn");
+
+        // Input area
         const inputList = document.querySelector(".input-list");
+
+        // 'Loading...' text container
         const loadingTxt = document.getElementById('loading-text')
         let word;
 
+        // Get a female voice from speechSynthesis API
         function getFemaleVoice() {
             const voiceIndex = 7;
             return speechSynthesis.getVoices()[voiceIndex];
         }
 
+        // Asynchronously speak the word passed as a parameter
         function speak(text) {
             return new Promise((resolve, reject) => {
                 console.log('[speak]: Data recieved...')
@@ -132,7 +152,9 @@
         }
 
 
-
+        // Fetch a word randomly from 
+        // https://github.com/matthewreagan/WebstersEnglishDictionary
+        // on window load
         window.addEventListener("load", async () => {
             console.log("Loaded!");
             const url =
@@ -140,6 +162,8 @@
             const response = await fetch(url);
             const data = await response.json();
             const arr = [];
+
+            // Structue the fetched words in to an array
             Object.keys(data).forEach((key) => {
                 arr.push({
                     word: key,
@@ -147,22 +171,30 @@
                 });
             });
             const index = Math.round(Math.random() * (arr.length - 1));
-            word = arr[index];
+            word = arr[index]; // Select a random word and store in the word variable
+
+            // Render input area depending word length
+            // (1 input of maxlength 1 for each letter)
             for (let i = 0; i < word.word.length; i++) {
                 inputList.innerHTML += `<li><input minlength="1" maxlength="1" /></li>`;
             }
 
+            // Hide loading text and display input fields
             loadingTxt.style.visibility = "hidden";
             inputList.style.visibility = "visible";
             // await speak(word.word)
 
+            // Listen to value changes in each input
+            // and move to the next input if the 
+            // current input is filled
             inputList.childNodes.forEach((child, i) => {
-                console.log(child)
                 if (i != (inputList.childNodes.length - 1)) {
+                    // Listen to change event of the input
                     child.firstChild.addEventListener(('input'), () => {
                         console.log('Changed...')
                         if (child.firstChild.value.length == 1) {
-                            child.firstChild.blur();
+                            child.firstChild.blur(); // Remove focus from the current input
+                            // Focus the next input
                             inputList.childNodes[i + 1].firstChild.focus();
                         }
                     })
@@ -180,29 +212,36 @@
                 const formData = new FormData();
                 formData.append('uid', <?php echo $_SESSION['id']; ?>)
                 let submittedWord = "";
+                // concatanate the values user
+                // entered in each character filed
                 inputList.childNodes.forEach((child) => {
                     if (child && child.firstChild)
                         submittedWord += child.firstChild.value;
                 });
 
+                // Compare the entered word and the fetched word
                 if (submittedWord.toLowerCase() == word.word) {
+                    // If correct,
+                    // increase the rating
                     fetch('./controller/incremint.php', {
                         method: "post",
                         body: formData
                     }).then(response => response.json()).then(data => {
                         if (!data?.error) {
-                            window.location.replace('./success.php')
+                            window.location.replace('./success.php') // Redirect to Success page
                         } else {
                             alert('Something went wrong')
                         }
                     })
                 } else {
+                    // If not correct
+                    // Decrease the rating
                     fetch('./controller/decriment.php', {
                         method: "post",
                         body: formData
                     }).then(response => response.json()).then(data => {
                         if (!data?.error) {
-                            window.location.replace('./wrong.php')
+                            window.location.replace('./wrong.php') // Redirect to wrong page
                         } else {
                             alert('Something went wrong')
                         }
