@@ -48,8 +48,8 @@ Since this project fetches data from [matthewreagan/WebstersEnglishDictionary](h
     <li>Next start the MySQL server</li>
     <li>Then head overto PHPMyAdmin in the localhost and create a Database named as 'spellsizzle'. Next import the <a href="./sql/users.sql">SpellSizzle/sql/users.sql</a> file in to the database</li>
     <li>
-        Install PHP and PHP-MySQL
-        <pre>sudo apt-get install php php-mysql</pre>
+        Install Apache, PHP and PHP-MySQL
+        <pre>sudo apt-get install apache2 php php-mysql</pre>
     </li>
     <li>Install git
         <pre>sudo apt-get install git</pre>
