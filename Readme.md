@@ -17,6 +17,8 @@ Additionally, we have used the [matthewreagan/WebstersEnglishDictionary](https:/
 
 ## How to play the game?
 
+Note: The web application is mobile responsive and works well in the mobile browsers too
+
 -   First go to [http://43.205.223.158/SpellSizzle/](http://43.205.223.158/SpellSizzle/) where we hosted our application
 -   Then go to the play page and create an account or login if you have already registered in the platform
 -   Once you login, you will be redirected to the play page where you will be prompted enter the correct spelling of a word randomly selected from [matthewreagan/WebstersEnglishDictionary](https://github.com/matthewreagan/WebstersEnglishDictionary)
