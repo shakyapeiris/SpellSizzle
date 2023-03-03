@@ -152,8 +152,8 @@
                 inputList.innerHTML += `<li><input minlength="1" maxlength="1" /></li>`;
             }
 
-            loadingTxt.style.display = "none";
-            inputList.style.display = "block";
+            loadingTxt.style.visibility = "hidden";
+            inputList.style.visibility = "visible";
             // await speak(word.word)
 
             inputList.childNodes.forEach((child, i) => {

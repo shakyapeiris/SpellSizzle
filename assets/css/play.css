@@ -1,149 +1,175 @@
-
 .play {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 25px 0;
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 25px 0;
 }
 
 .play .topbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 10vh;
 }
 
 .play .topbar .playerinfo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
 }
 
 .play .topbar .playerinfo .avatar {
-    height: 50px;
-    width: 50px;
-    border-radius: 1000px;
+	height: 50px;
+	width: 50px;
+	border-radius: 1000px;
 }
 
 .play .topbar .playerinfo .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 1000px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 1000px;
 }
 
 .play .topbar .playerinfo .user {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.2rem;
 }
 
 .play .topbar .playerinfo .user p {
-    color: #777;
+	color: #777;
 }
 
 .play .topbar .signout {
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FD9B9B;
-    border-radius: 1000px;
-    color: white;
+	height: 50px;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fd9b9b;
+	border-radius: 1000px;
+	color: white;
 }
 
 .play .topbar .signout svg {
-    height: 80%;
-    width: 80%;
-    fill: white;
+	height: 80%;
+	width: 80%;
+	fill: white;
 }
 
 .play .window {
-    border-radius: 16px;
-    display: flex;
-    flex: 1;
-    width: 100%;
-    background: #f1f1f1;
-    position: relative;
+	border-radius: 16px;
+	display: flex;
+	flex: 1;
+	width: 100%;
+	background: #f1f1f1;
+	position: relative;
 }
 
 .play .window #loading-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .play .window ul {
-    list-style: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+	list-style: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	visibility: hidden;
 }
 
 .play .window ul li {
-    display: inline-flex;
-    margin-right: 10px;
+	display: inline-flex;
+	margin-right: 10px;
 }
 
 .play .window ul li:last-child {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 .play .window ul li input {
-    outline: none;
-    border: none;
-    border-bottom: 3px solid orange;
-    width: 30px;
-    color: orange;
-    Background: none;
-    text-align: center;
-    font-size: 2rem;
+	outline: none;
+	border: none;
+	border-bottom: 3px solid orange;
+	width: 30px;
+	color: orange;
+	background: none;
+	text-align: center;
+	font-size: 2rem;
 }
 
 .play .bottombar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
-    height: 10vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 1rem;
+	height: 10vh;
 }
 
 .play .bottombar .actions {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
 }
 
 .play .bottombar .action-btn {
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #9D8EF5;
-    border-radius: 1000px;
-    outline: none;
-    color: white;
+	height: 50px;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #9d8ef5;
+	border-radius: 1000px;
+	outline: none;
+	color: white;
 }
 
 .play .bottombar .action-btn-done {
-    background-color: #49F8C3;
+	background-color: #49f8c3;
 }
 
 .play .bottombar .action-btn-skip {
-    background-color: #FDDC9B;
+	background-color: #fddc9b;
 }
 
 .play .bottombar .actions svg {
-    height: 50%;
-    width: 50%;
+	height: 50%;
+	width: 50%;
+}
+
+@media (max-width: 768px) {
+	.play .window ul {
+		display: grid;
+		width: 75%;
+		grid-template-columns: auto auto auto auto auto auto auto;
+	}
+	.play .window ul li {
+		display: list-item;
+		margin: 0;
+	}
+}
+
+@media (max-width: 425px) {
+	.play .window ul {
+		grid-template-columns: auto auto auto auto auto;
+	}
+}
+
+@media (max-width: 320px) {
+	.play .topbar .playerinfo .avatar,
+	.play .topbar .signout,
+	.play .bottombar .action-btn {
+		width: 40px;
+		height: 40px;
+	}
 }
