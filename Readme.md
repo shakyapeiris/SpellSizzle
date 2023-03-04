@@ -4,6 +4,8 @@ Welcome to SpellSizzle, a web-based edutainment platform developed by the develo
 
 SpellSizzle offers a range of features such as real-time leaderboards, practice quizzes, and audio pronunciation guides. Users can create an account and start playing immediately, and the platform offers unlimited word sets to practice.
 
+[Platform Walckthrough](https://www.loom.com/share/471e40a3f3834ad18347be950a450ac0)
+
 ## Technologies & Tools We Used
 
 -   PHP
